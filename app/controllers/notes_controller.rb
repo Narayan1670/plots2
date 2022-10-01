@@ -140,7 +140,7 @@ class NotesController < ApplicationController
       return
     elsif params[:draft] == "true"
       token = SecureRandom.urlsafe_base64(16, false)
-      @node.slug = @node.slug + " token:" + token
+      @node.slug = "#{@node.slug} token:#{token}"
       @node.save!
     end
 
